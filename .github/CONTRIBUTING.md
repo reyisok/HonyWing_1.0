@@ -1,103 +1,109 @@
-# 贡献指南
+# Contributing Guide
 
-感谢您对 HonyWing 项目的关注！我们欢迎各种形式的贡献，包括但不限于：
+Thank you for your interest in the HonyWing project! We welcome all forms of contributions, including but not limited to:
 
-- 🐛 Bug 报告
-- 💡 功能建议
-- 📝 文档改进
-- 🔧 代码贡献
-- 🧪 测试用例
+- 🐛 Bug reports
+- 💡 Feature suggestions
+- 📝 Documentation improvements
+- 🔧 Code contributions
+- 🧪 Test cases
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 开发环境要求
+### Development Environment Requirements
 
-- **操作系统**: Windows 10 1903+ 或 Windows 11
-- **开发工具**: Visual Studio 2022 或 Visual Studio Code
-- **运行时**: .NET 8.0 SDK
-- **版本控制**: Git
+- **Operating System**: Windows 10 1903+ or Windows 11
+- **Development Tools**: Visual Studio 2022 or Visual Studio Code
+- **Runtime**: .NET 8.0 SDK
+- **Version Control**: Git
 
-### 环境搭建
+### Environment Setup
 
-1. **克隆仓库**
+1. **Clone Repository**
+
    ```bash
-   git clone https://github.com/your-username/HonyWing.git
+   git clone https://github.com/reyisok/HonyWing.git
    cd HonyWing
    ```
 
-2. **安装依赖**
+2. **Install Dependencies**
+
    ```bash
    dotnet restore
    ```
 
-3. **构建项目**
+3. **Build Project**
+
    ```bash
    dotnet build
    ```
 
-4. **运行项目**
+4. **Run Project**
+
    ```bash
    dotnet run --project src\HonyWing.UI\HonyWing.UI.csproj
    ```
 
-## 📋 贡献流程
+## 📋 Contribution Process
 
-### 1. 创建 Issue
+### 1. Create Issue
 
-在开始编码之前，请先创建一个 Issue 来描述您要解决的问题或添加的功能：
+Before starting to code, please create an Issue to describe the problem you want to solve or the feature you want to add:
 
-- 使用合适的 Issue 模板
-- 提供详细的描述和重现步骤（对于 Bug）
-- 说明预期的行为和实际行为
-- 附上相关的截图或日志
+- Use appropriate Issue templates
+- Provide detailed descriptions and reproduction steps (for Bugs)
+- Explain expected behavior and actual behavior
+- Attach relevant screenshots or logs
 
-### 2. Fork 和分支
+### 2. Fork and Branch
 
-1. **Fork 项目**到您的 GitHub 账户
-2. **克隆 Fork 的仓库**到本地
-3. **创建功能分支**：
+1. **Fork the project** to your GitHub account
+2. **Clone the forked repository** locally
+3. **Create feature branch**:
+
    ```bash
    git checkout -b feature/your-feature-name
-   # 或
+   # or
    git checkout -b bugfix/issue-number
    ```
 
-### 3. 开发和测试
+### 3. Development and Testing
 
-- 遵循项目的编码规范
-- 编写清晰的提交信息
-- 添加必要的测试用例
-- 确保所有测试通过
-- 更新相关文档
+- Follow project coding standards
+- Write clear commit messages
+- Add necessary test cases
+- Ensure all tests pass
+- Update relevant documentation
 
-### 4. 提交 Pull Request
+### 4. Submit Pull Request
 
-1. **推送分支**到您的 Fork：
+1. **Push branch** to your Fork:
+
    ```bash
    git push origin feature/your-feature-name
    ```
 
-2. **创建 Pull Request**：
-   - 使用 PR 模板
-   - 链接相关的 Issue
-   - 提供详细的变更说明
-   - 添加测试截图（如适用）
+2. **Create Pull Request**:
+   - Use PR template
+   - Link related Issues
+   - Provide detailed change descriptions
+   - Add test screenshots (if applicable)
 
-## 📝 编码规范
+## 📝 Coding Standards
 
-### C# 代码规范
+### C# Code Standards
 
-- 遵循 [Microsoft C# 编码约定](https://docs.microsoft.com/zh-cn/dotnet/csharp/fundamentals/coding-style/coding-conventions)
-- 使用 PascalCase 命名类、方法、属性
-- 使用 camelCase 命名局部变量、参数
-- 使用有意义的变量和方法名
-- 添加适当的 XML 文档注释
+- Follow [Microsoft C# Coding Conventions](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
+- Use PascalCase for classes, methods, properties
+- Use camelCase for local variables, parameters
+- Use meaningful variable and method names
+- Add appropriate XML documentation comments
 
-### 代码结构
+### Code Structure
 
 ```csharp
 /// <summary>
-/// 示例类说明
+/// Example class description
 /// </summary>
 /// <author>Mr.Rey Copyright © 2025</author>
 /// <created>2025-01-13</created>
@@ -106,50 +112,50 @@
 public class ExampleClass
 {
     private readonly IService _service;
-    
+
     public ExampleClass(IService service)
     {
         _service = service ?? throw new ArgumentNullException(nameof(service));
     }
-    
+
     /// <summary>
-    /// 示例方法说明
+    /// Example method description
     /// </summary>
-    /// <param name="parameter">参数说明</param>
-    /// <returns>返回值说明</returns>
+    /// <param name="parameter">Parameter description</param>
+    /// <returns>Return value description</returns>
     public async Task<Result> ExampleMethodAsync(string parameter)
     {
-        // 实现逻辑
+        // Implementation logic
     }
 }
 ```
 
-### XAML 规范
+### XAML Standards
 
-- 使用一致的缩进（4个空格）
-- 属性按逻辑分组排列
-- 使用资源字典管理样式
-- 遵循 MVVM 模式
+- Use consistent indentation (4 spaces)
+- Arrange attributes by logical grouping
+- Use resource dictionaries to manage styles
+- Follow MVVM pattern
 
 ```xml
 <UserControl x:Class="HonyWing.UI.Controls.ExampleControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
-        <Button Content="示例按钮"
+        <Button Content="Example Button"
                 Style="{StaticResource PrimaryButtonStyle}"
                 Command="{Binding ExampleCommand}" />
     </Grid>
 </UserControl>
 ```
 
-## 🧪 测试指南
+## 🧪 Testing Guide
 
-### 单元测试
+### Unit Testing
 
-- 使用 xUnit 测试框架
-- 测试文件命名：`ClassNameTests.cs`
-- 测试方法命名：`MethodName_Scenario_ExpectedResult`
+- Use xUnit testing framework
+- Test file naming: `ClassNameTests.cs`
+- Test method naming: `MethodName_Scenario_ExpectedResult`
 
 ```csharp
 [Fact]
@@ -158,120 +164,120 @@ public void CalculateDistance_ValidCoordinates_ReturnsCorrectDistance()
     // Arrange
     var point1 = new Point(0, 0);
     var point2 = new Point(3, 4);
-    
+
     // Act
     var distance = GeometryHelper.CalculateDistance(point1, point2);
-    
+
     // Assert
     Assert.Equal(5.0, distance, 2);
 }
 ```
 
-### 集成测试
+### Integration Testing
 
-- 测试完整的用户场景
-- 使用测试数据和模拟服务
-- 验证 UI 交互和业务逻辑
+- Test complete user scenarios
+- Use test data and mock services
+- Verify UI interactions and business logic
 
-## 📚 文档贡献
+## 📚 Documentation Contributions
 
-### 文档类型
+### Documentation Types
 
-- **API 文档**: 代码中的 XML 注释
-- **用户文档**: README.md 和 docs/ 目录
-- **开发文档**: 架构设计和技术说明
+- **API Documentation**: XML comments in code
+- **User Documentation**: README.md and docs/ directory
+- **Development Documentation**: Architecture design and technical specifications
 
-### 文档规范
+### Documentation Standards
 
-- 使用 Markdown 格式
-- 提供清晰的示例代码
-- 包含必要的截图和图表
-- 保持文档与代码同步更新
+- Use Markdown format
+- Provide clear example code
+- Include necessary screenshots and diagrams
+- Keep documentation synchronized with code updates
 
-## 🐛 Bug 报告
+## 🐛 Bug Reports
 
-### 报告模板
+### Report Template
 
-请使用以下模板报告 Bug：
-
-```markdown
-## Bug 描述
-简要描述遇到的问题
-
-## 重现步骤
-1. 打开应用程序
-2. 点击...
-3. 输入...
-4. 观察到错误
-
-## 预期行为
-描述您期望发生的情况
-
-## 实际行为
-描述实际发生的情况
-
-## 环境信息
-- 操作系统: Windows 11
-- .NET 版本: 8.0
-- 应用版本: 1.0.0
-
-## 附加信息
-- 错误日志
-- 截图
-- 其他相关信息
-```
-
-## 💡 功能建议
-
-### 建议模板
+Please use the following template to report bugs:
 
 ```markdown
-## 功能描述
-简要描述建议的功能
+## Bug Description
+Briefly describe the problem encountered
 
-## 使用场景
-描述什么情况下需要这个功能
+## Reproduction Steps
+1. Open the application
+2. Click...
+3. Enter...
+4. Observe the error
 
-## 解决方案
-描述您认为的实现方式
+## Expected Behavior
+Describe what you expected to happen
 
-## 替代方案
-描述其他可能的实现方式
+## Actual Behavior
+Describe what actually happened
 
-## 附加信息
-- 相关截图或原型
-- 参考资料
+## Environment Information
+- Operating System: Windows 11
+- .NET Version: 8.0
+- Application Version: 1.0.0
+
+## Additional Information
+- Error logs
+- Screenshots
+- Other relevant information
 ```
 
-## 🔍 代码审查
+## 💡 Feature Suggestions
 
-### 审查要点
+### Suggestion Template
 
-- **功能性**: 代码是否实现了预期功能
-- **可读性**: 代码是否清晰易懂
-- **性能**: 是否存在性能问题
-- **安全性**: 是否存在安全隐患
-- **测试**: 是否有足够的测试覆盖
+```markdown
+## Feature Description
+Briefly describe the suggested feature
 
-### 审查流程
+## Use Cases
+Describe when this feature would be needed
 
-1. 自动化检查（CI/CD）
-2. 代码审查（至少一位维护者）
-3. 测试验证
-4. 文档更新确认
+## Solution
+Describe your proposed implementation approach
 
-## 📞 联系方式
+## Alternatives
+Describe other possible implementation approaches
 
-如果您有任何问题或建议，可以通过以下方式联系我们：
+## Additional Information
+- Related screenshots or prototypes
+- Reference materials
+```
 
-- **GitHub Issues**: [项目 Issues 页面]
-- **GitHub Discussions**: [项目讨论区]
-- **邮箱**: [your-email@example.com]
+## 🔍 Code Review
 
-## 📄 许可证
+### Review Points
 
-通过贡献代码，您同意您的贡献将在与项目相同的许可证下发布。请确保您有权贡献您提交的代码。
+- **Functionality**: Does the code implement the expected functionality
+- **Readability**: Is the code clear and understandable
+- **Performance**: Are there any performance issues
+- **Security**: Are there any security vulnerabilities
+- **Testing**: Is there sufficient test coverage
+
+### Review Process
+
+1. Automated checks (CI/CD)
+2. Code review (at least one maintainer)
+3. Test verification
+4. Documentation update confirmation
+
+## 📞 Contact
+
+If you have any questions or suggestions, you can contact us through:
+
+- **GitHub Issues**: [Project Issues Page]
+- **GitHub Discussions**: [Project Discussion Area]
+- **Email**: [your-email@example.com]
+
+## 📄 License
+
+By contributing code, you agree that your contributions will be released under the same license as the project. Please ensure you have the right to contribute the code you submit.
 
 ---
 
-再次感谢您对 HonyWing 项目的贡献！🎉
+Thank you again for your contribution to the HonyWing project! 🎉

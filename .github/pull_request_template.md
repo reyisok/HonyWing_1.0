@@ -1,140 +1,140 @@
-## 📋 Pull Request 描述
+## 📋 Pull Request Description
 
-### 🎯 变更类型
-请选择此 PR 的类型：
+### 🎯 Change Type
+Please select the type of this PR:
 
-- [ ] 🐛 Bug 修复 (非破坏性变更，修复了一个问题)
-- [ ] ✨ 新功能 (非破坏性变更，添加了功能)
-- [ ] 💥 破坏性变更 (修复或功能会导致现有功能无法按预期工作)
-- [ ] 📚 文档更新 (仅文档变更)
-- [ ] 🎨 代码重构 (既不修复 bug 也不添加功能的代码变更)
-- [ ] ⚡ 性能改进
-- [ ] 🧪 测试 (添加缺失的测试或纠正现有测试)
-- [ ] 🔧 构建/工具 (影响构建系统或外部依赖的变更)
+- [ ] 🐛 Bug fix (non-breaking change that fixes an issue)
+- [ ] ✨ New feature (non-breaking change that adds functionality)
+- [ ] 💥 Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] 📚 Documentation update (documentation changes only)
+- [ ] 🎨 Code refactoring (code change that neither fixes a bug nor adds a feature)
+- [ ] ⚡ Performance improvement
+- [ ] 🧪 Tests (adding missing tests or correcting existing tests)
+- [ ] 🔧 Build/Tools (changes that affect the build system or external dependencies)
 
-### 📝 变更摘要
-简要描述此 PR 的变更内容：
+### 📝 Change Summary
+Briefly describe the changes in this PR:
 
-### 🔗 相关 Issue
-修复 #(issue 编号)
+### 🔗 Related Issue
+Fixes #(issue number)
 
-## 🔍 变更详情
+## 🔍 Change Details
 
-### 📁 修改的文件
-列出主要修改的文件和变更原因：
+### 📁 Modified Files
+List the main modified files and reasons for changes:
 
-- `src/HonyWing.UI/Views/MainWindow.xaml` - 添加了新的按钮
-- `src/HonyWing.Core/Services/ExampleService.cs` - 实现了新的业务逻辑
+- `src/HonyWing.UI/Views/MainWindow.xaml` - Added new button
+- `src/HonyWing.Core/Services/ExampleService.cs` - Implemented new business logic
 
-### 🚀 新增功能
-如果这是一个新功能，请描述：
+### 🚀 New Features
+If this is a new feature, please describe:
 
-- 功能1：描述
-- 功能2：描述
+- Feature 1: Description
+- Feature 2: Description
 
-### 🐛 修复的问题
-如果这是一个 bug 修复，请描述：
+### 🐛 Fixed Issues
+If this is a bug fix, please describe:
 
-- 问题1：描述修复内容
-- 问题2：描述修复内容
+- Issue 1: Description of fix
+- Issue 2: Description of fix
 
-## 🧪 测试
+## 🧪 Testing
 
-### 测试类型
-请描述您进行的测试：
+### Test Types
+Please describe the tests you performed:
 
-- [ ] 单元测试
-- [ ] 集成测试
-- [ ] 手动测试
-- [ ] 端到端测试
+- [ ] Unit tests
+- [ ] Integration tests
+- [ ] Manual testing
+- [ ] End-to-end tests
 
-### 测试场景
-描述测试的具体场景：
+### Test Scenarios
+Describe specific test scenarios:
 
-1. **场景1**：
-   - 步骤：...
-   - 预期结果：...
-   - 实际结果：...
+1. **Scenario 1**:
+   - Steps: ...
+   - Expected result: ...
+   - Actual result: ...
 
-2. **场景2**：
-   - 步骤：...
-   - 预期结果：...
-   - 实际结果：...
+2. **Scenario 2**:
+   - Steps: ...
+   - Expected result: ...
+   - Actual result: ...
 
-### 测试环境
-- **操作系统**：Windows 11
-- **分辨率**：1920x1080
-- **DPI 缩放**：125%
-- **.NET 版本**：8.0
+### Test Environment
+- **Operating System**: Windows 11
+- **Resolution**: 1920x1080
+- **DPI Scaling**: 125%
+- **.NET Version**: 8.0
 
-## 📷 截图/录屏
+## 📷 Screenshots/Recordings
 
-如果 UI 有变更，请提供前后对比截图：
+If there are UI changes, please provide before/after comparison screenshots:
 
-### 变更前
-<!-- 拖拽截图到这里 -->
+### Before
+<!-- Drag screenshot here -->
 
-### 变更后
-<!-- 拖拽截图到这里 -->
+### After
+<!-- Drag screenshot here -->
 
-## 📋 检查清单
+## 📋 Checklist
 
-### 代码质量
-- [ ] 我的代码遵循了项目的编码规范
-- [ ] 我已经进行了自我代码审查
-- [ ] 我已经添加了必要的注释，特别是在难以理解的区域
-- [ ] 我已经添加了相应的 XML 文档注释
-- [ ] 我的变更没有产生新的警告
+### Code Quality
+- [ ] My code follows the project's coding standards
+- [ ] I have performed a self-review of my code
+- [ ] I have added necessary comments, especially in hard-to-understand areas
+- [ ] I have added corresponding XML documentation comments
+- [ ] My changes generate no new warnings
 
-### 测试
-- [ ] 我已经添加了证明我的修复有效或我的功能工作的测试
-- [ ] 新的和现有的单元测试在我的变更下都通过了
-- [ ] 我已经在本地测试了所有变更
+### Testing
+- [ ] I have added tests that prove my fix is effective or that my feature works
+- [ ] New and existing unit tests pass locally with my changes
+- [ ] I have tested all changes locally
 
-### 文档
-- [ ] 我已经对文档进行了相应的变更
-- [ ] 我的变更需要更新文档，并且我已经更新了文档
-- [ ] 我已经更新了 CHANGELOG.md（如果适用）
+### Documentation
+- [ ] I have made corresponding changes to the documentation
+- [ ] My changes require a documentation update, and I have updated the documentation
+- [ ] I have updated CHANGELOG.md (if applicable)
 
-### 兼容性
-- [ ] 我的变更不会破坏现有功能
-- [ ] 我已经考虑了向后兼容性
-- [ ] 我已经测试了不同的 Windows 版本（如果适用）
-- [ ] 我已经测试了不同的屏幕分辨率和 DPI 设置（如果适用）
+### Compatibility
+- [ ] My changes do not break existing functionality
+- [ ] I have considered backward compatibility
+- [ ] I have tested different Windows versions (if applicable)
+- [ ] I have tested different screen resolutions and DPI settings (if applicable)
 
-## 🔄 部署注意事项
+## 🔄 Deployment Considerations
 
-### 配置变更
-- [ ] 此变更需要配置文件更新
-- [ ] 此变更需要数据库迁移
-- [ ] 此变更需要清除缓存
+### Configuration Changes
+- [ ] This change requires configuration file updates
+- [ ] This change requires database migration
+- [ ] This change requires cache clearing
 
-### 依赖变更
-- [ ] 此变更添加了新的 NuGet 包依赖
-- [ ] 此变更更新了现有依赖的版本
-- [ ] 此变更移除了不再需要的依赖
+### Dependency Changes
+- [ ] This change adds new NuGet package dependencies
+- [ ] This change updates existing dependency versions
+- [ ] This change removes no longer needed dependencies
 
-## 📝 附加信息
+## 📝 Additional Information
 
-### 性能影响
-描述此变更对性能的影响（如果有）：
+### Performance Impact
+Describe the performance impact of this change (if any):
 
-### 安全考虑
-描述此变更的安全影响（如果有）：
+### Security Considerations
+Describe the security impact of this change (if any):
 
-### 其他说明
-添加任何其他相关信息：
+### Other Notes
+Add any other relevant information:
 
 ---
 
-### 审查者注意事项
+### Reviewer Notes
 
-请审查者特别关注以下方面：
-- [ ] 代码逻辑正确性
-- [ ] 性能影响
-- [ ] 安全性
-- [ ] 用户体验
-- [ ] 错误处理
-- [ ] 测试覆盖率
+Please pay special attention to the following aspects:
+- [ ] Code logic correctness
+- [ ] Performance impact
+- [ ] Security
+- [ ] User experience
+- [ ] Error handling
+- [ ] Test coverage
 
-感谢您的贡献！🎉
+Thank you for your contribution! 🎉

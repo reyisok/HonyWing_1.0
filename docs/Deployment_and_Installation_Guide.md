@@ -1,7 +1,7 @@
 # HonyWing Project Deployment and Installation Guide
 
-**@author: Mr.Rey Copyright © 2025**  
-**@created: 2025-01-07**  
+**@author: Mr.Rey Copyright © 2025**
+**@created: 2025-01-07**
 **@version: 1.0.0**
 
 ## Project Overview
@@ -11,6 +11,7 @@ HonyWing is a WPF-based image matching and mouse automation tool that supports s
 ## System Requirements
 
 ### Minimum System Requirements
+
 - Operating System: Windows 10 or higher
 - .NET Version: .NET 8.0 or higher
 - Memory: At least 4GB RAM
@@ -18,6 +19,7 @@ HonyWing is a WPF-based image matching and mouse automation tool that supports s
 - Display: Support for 1920x1080 resolution or higher
 
 ### Recommended System Configuration
+
 - Operating System: Windows 11
 - .NET Version: .NET 8.0
 - Memory: 8GB RAM or more
@@ -29,11 +31,13 @@ HonyWing is a WPF-based image matching and mouse automation tool that supports s
 ### 1. Environment Setup
 
 #### Install .NET 8.0 SDK
+
 1. Visit [Microsoft .NET Download Page](https://dotnet.microsoft.com/download/dotnet/8.0)
 2. Download and install .NET 8.0 SDK
 3. Verify installation: Open command prompt and run `dotnet --version`
 
 #### Install Visual Studio or Visual Studio Code
+
 - **Visual Studio 2022** (Recommended):
   - Download Visual Studio 2022 Community or higher
   - Select ".NET desktop development" workload during installation
@@ -44,17 +48,20 @@ HonyWing is a WPF-based image matching and mouse automation tool that supports s
 ### 2. Project Build
 
 #### Clone Project
+
 ```bash
 git clone <project_repository_url>
 cd HonyWing
 ```
 
 #### Restore Dependencies
+
 ```bash
 dotnet restore
 ```
 
 #### Build Project
+
 ```bash
 # Debug version
 dotnet build --configuration Debug
@@ -64,6 +71,7 @@ dotnet build --configuration Release
 ```
 
 #### Run Project
+
 ```bash
 # Run from source code
 dotnet run --project src/HonyWing.UI
@@ -78,6 +86,7 @@ cd src/HonyWing.UI/bin/Debug/net8.0-windows
 ### 1. Create Release Build
 
 #### Self-Contained Deployment (Recommended)
+
 ```bash
 # Windows x64 self-contained deployment
 dotnet publish src/HonyWing.UI/HonyWing.UI.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o ./publish/win-x64
@@ -87,6 +96,7 @@ dotnet publish src/HonyWing.UI/HonyWing.UI.csproj -c Release -r win-x86 --self-c
 ```
 
 #### Framework-Dependent Deployment
+
 ```bash
 # Requires .NET 8.0 runtime on target machine
 dotnet publish src/HonyWing.UI/HonyWing.UI.csproj -c Release -r win-x64 --self-contained false -p:PublishSingleFile=true -o ./publish/framework-dependent
@@ -95,6 +105,7 @@ dotnet publish src/HonyWing.UI/HonyWing.UI.csproj -c Release -r win-x64 --self-c
 ### 2. Deployment File Structure
 
 File structure after publishing:
+
 ```
 publish/
 ├── win-x64/                    # Windows x64 version
@@ -111,6 +122,7 @@ publish/
 ### 3. Installation and Deployment Steps
 
 #### Method 1: Direct Deployment
+
 1. Copy the published folder to the target machine
 2. Ensure the target machine meets system requirements
 3. Double-click `HonyWing.UI.exe` to run the program
@@ -129,11 +141,11 @@ Create MSI installer using WiX Toolset:
     <OutputType>Package</OutputType>
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="WixToolset.UI.wixext" Version="4.0.0" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Content Include="Product.wxs" />
   </ItemGroup>
@@ -141,6 +153,7 @@ Create MSI installer using WiX Toolset:
 ```
 
 3. Build installer package:
+
 ```bash
 dotnet build HonyWing.Installer.wixproj -c Release
 ```
@@ -183,6 +196,7 @@ Log files are saved by default in the `logs/` directory, categorized by date and
 **Problem**: Double-clicking the program has no response or shows errors
 
 **Solutions**:
+
 - Check if .NET 8.0 runtime is installed (for framework-dependent deployment)
 - Check if Windows version is supported
 - Run the program as administrator
@@ -193,6 +207,7 @@ Log files are saved by default in the `logs/` directory, categorized by date and
 **Problem**: Image matching fails or matches wrong locations
 
 **Solutions**:
+
 - Adjust matching threshold (modify DefaultThreshold in appsettings.json)
 - Ensure screenshots are clear and avoid blur
 - Check DPI scaling settings
@@ -202,6 +217,7 @@ Log files are saved by default in the `logs/` directory, categorized by date and
 **Problem**: ESC key cannot stop simulation tasks
 
 **Solutions**:
+
 - Check if other programs are using the ESC hotkey
 - Run the program as administrator
 - Restart the program to re-register hotkeys
@@ -211,6 +227,7 @@ Log files are saved by default in the `logs/` directory, categorized by date and
 **Problem**: Interface displays abnormally on high DPI monitors
 
 **Solutions**:
+
 - Right-click program → Properties → Compatibility → Change high DPI settings
 - Select "Override high DPI scaling behavior"
 - Scaling performed by: Application
@@ -218,17 +235,20 @@ Log files are saved by default in the `logs/` directory, categorized by date and
 ## Uninstallation
 
 ### Manual Uninstallation
+
 1. Delete the program installation directory
 2. Delete user data directory (if any)
 3. Clean registry entries (if any)
 
 ### MSI Installer Package Uninstallation
+
 1. Control Panel → Programs and Features
 2. Find HonyWing and uninstall
 
 ## Technical Support
 
 If you encounter problems, please:
+
 1. Check log files (logs/ directory)
 2. Check system event logs
 3. Submit an Issue to the project repository
@@ -243,6 +263,6 @@ If you encounter problems, please:
 
 **Note**: This document will be continuously maintained as the project updates. Please refer to the latest version.
 
-**@author: Mr.Rey Copyright © 2025**  
-**@created: 2025-01-07**  
+**@author: Mr.Rey Copyright © 2025**
+**@created: 2025-01-07**
 **@version: 1.0.0**

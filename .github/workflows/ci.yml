@@ -14,7 +14,7 @@ env:
   BUILD_CONFIGURATION: 'Release'
 
 jobs:
-  # 代码质量检查
+  # Code quality check
   code-quality:
     name: Code Quality Check
     runs-on: windows-latest
@@ -39,7 +39,7 @@ jobs:
         dotnet format --verify-no-changes --verbosity diagnostic ${{ env.SOLUTION_PATH }}
       continue-on-error: true
 
-  # 单元测试
+  # Unit tests
   unit-tests:
     name: Unit Tests
     runs-on: windows-latest
@@ -85,7 +85,7 @@ jobs:
         flags: unittests
         name: codecov-umbrella
 
-  # 构建和打包
+  # Build and package
   build-and-package:
     name: Build and Package
     runs-on: windows-latest
@@ -130,7 +130,7 @@ jobs:
         path: ./publish/${{ matrix.configuration }}
         retention-days: 30
 
-  # 安全扫描
+  # Security scan
   security-scan:
     name: Security Scan
     runs-on: windows-latest
@@ -152,7 +152,7 @@ jobs:
       run: |
         dotnet list package --vulnerable --include-transitive 2>&1 | tee security-scan.log
         if (Select-String -Path security-scan.log -Pattern "has the following vulnerable packages") {
-          Write-Host "::warning::发现安全漏洞，请检查依赖包"
+          Write-Host "::warning::Security vulnerabilities found, please check dependency packages"
           Get-Content security-scan.log
         }
       shell: pwsh
@@ -164,7 +164,7 @@ jobs:
         name: security-scan-results
         path: security-scan.log
 
-  # 发布到 GitHub Releases
+  # Release to GitHub Releases
   release:
     name: Create Release
     runs-on: windows-latest
@@ -186,16 +186,16 @@ jobs:
         $version = "${{ github.event.release.tag_name }}"
         $packageName = "HonyWing-$version-win-x64"
         
-        # 创建发布目录
+        # Create release directory
         New-Item -ItemType Directory -Path "./packages" -Force
         
-        # 复制文件到发布目录
+        # Copy files to release directory
         Copy-Item -Path "./release/*" -Destination "./packages/$packageName/" -Recurse -Force
         Copy-Item -Path "README.md" -Destination "./packages/$packageName/" -Force
         Copy-Item -Path "LICENSE.txt" -Destination "./packages/$packageName/" -Force
         Copy-Item -Path "THIRD_PARTY_LICENSES.md" -Destination "./packages/$packageName/" -Force
         
-        # 创建 ZIP 包
+        # Create ZIP package
         Compress-Archive -Path "./packages/$packageName" -DestinationPath "./packages/$packageName.zip"
         
         Write-Host "Created package: $packageName.zip"
@@ -211,7 +211,7 @@ jobs:
         asset_name: HonyWing-${{ github.event.release.tag_name }}-win-x64.zip
         asset_content_type: application/zip
 
-  # 通知
+  # Notification
   notify:
     name: Notify
     runs-on: windows-latest
@@ -222,13 +222,13 @@ jobs:
     - name: Notify success
       if: needs.build-and-package.result == 'success' && needs.security-scan.result == 'success'
       run: |
-        Write-Host "✅ CI/CD 流水线执行成功！"
-        Write-Host "📦 构建完成，所有测试通过"
-        Write-Host "🔒 安全扫描通过"
+        Write-Host "✅ CI/CD pipeline executed successfully!"
+        Write-Host "📦 Build completed, all tests passed"
+        Write-Host "🔒 Security scan passed"
       
     - name: Notify failure
       if: needs.build-and-package.result == 'failure' || needs.security-scan.result == 'failure'
       run: |
-        Write-Host "❌ CI/CD 流水线执行失败！"
-        Write-Host "请检查构建日志和测试结果"
+        Write-Host "❌ CI/CD pipeline execution failed!"
+        Write-Host "Please check build logs and test results"
         exit 1

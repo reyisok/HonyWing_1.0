@@ -1,80 +1,80 @@
 ---
-name: Bug 报告
-about: 创建一个 Bug 报告来帮助我们改进项目
+name: Bug Report
+about: Create a bug report to help us improve the project
 title: '[BUG] '
 labels: 'bug'
 assignees: ''
 ---
 
-## 🐛 Bug 描述
+## 🐛 Bug Description
 
-简要描述遇到的问题。
+Briefly describe the issue you encountered.
 
-## 🔄 重现步骤
+## 🔄 Steps to Reproduce
 
-详细描述重现此 Bug 的步骤：
+Detailed steps to reproduce this bug:
 
-1. 打开应用程序
-2. 点击 '...'
-3. 输入 '...'
-4. 观察到错误
+1. Open the application
+2. Click on '...'
+3. Enter '...'
+4. Observe the error
 
-## ✅ 预期行为
+## ✅ Expected Behavior
 
-清晰简洁地描述您期望发生的情况。
+Clearly and concisely describe what you expected to happen.
 
-## ❌ 实际行为
+## ❌ Actual Behavior
 
-清晰简洁地描述实际发生的情况。
+Clearly and concisely describe what actually happened.
 
-## 📷 截图
+## 📷 Screenshots
 
-如果适用，请添加截图来帮助解释您的问题。
+If applicable, add screenshots to help explain your problem.
 
-## 💻 环境信息
+## 💻 Environment Information
 
-请完成以下信息：
+Please complete the following information:
 
-- **操作系统**: [例如 Windows 11]
-- **系统版本**: [例如 22H2]
-- **应用版本**: [例如 1.0.0]
-- **.NET 版本**: [例如 8.0]
-- **屏幕分辨率**: [例如 1920x1080]
-- **DPI 缩放**: [例如 125%]
+- **Operating System**: [e.g., Windows 11]
+- **System Version**: [e.g., 22H2]
+- **Application Version**: [e.g., 1.0.0]
+- **.NET Version**: [e.g., 8.0]
+- **Screen Resolution**: [e.g., 1920x1080]
+- **DPI Scaling**: [e.g., 125%]
 
-## 📋 日志信息
+## 📋 Log Information
 
-如果有相关的错误日志，请粘贴在这里：
+If there are relevant error logs, please paste them here:
 
 ```
-在这里粘贴日志内容
+Paste log content here
 ```
 
-## 📁 配置文件
+## 📁 Configuration Files
 
-如果问题与配置相关，请提供相关的配置信息：
+If the issue is configuration-related, please provide relevant configuration information:
 
 ```json
 {
-  "在这里粘贴配置内容": "如果适用"
+  "paste configuration content here": "if applicable"
 }
 ```
 
-## 🔧 尝试过的解决方案
+## 🔧 Attempted Solutions
 
-描述您已经尝试过的解决方案（如果有的话）。
+Describe any solutions you have already tried (if any).
 
-## 📝 附加信息
+## 📝 Additional Information
 
-添加任何其他有关问题的上下文信息。
+Add any other context information about the problem.
 
 ---
 
-### 检查清单
+### Checklist
 
-在提交此 Issue 之前，请确认：
+Before submitting this issue, please confirm:
 
-- [ ] 我已经搜索了现有的 Issues，确认这不是重复问题
-- [ ] 我已经提供了足够的信息来重现此问题
-- [ ] 我已经包含了相关的日志和截图
-- [ ] 我已经尝试了基本的故障排除步骤
+- [ ] I have searched existing issues to ensure this is not a duplicate
+- [ ] I have provided sufficient information to reproduce this issue
+- [ ] I have included relevant logs and screenshots
+- [ ] I have tried basic troubleshooting steps

@@ -1,4 +1,4 @@
-# HonyWing - 智能鼠标自动化工具
+# HonyWing - Intelligent Mouse Automation Tool
 
 <div align="center">
 
@@ -7,55 +7,55 @@
 ![Platform](https://img.shields.io/badge/platform-Windows%2011-blue.svg)
 ![Language](https://img.shields.io/badge/language-C%23-green.svg)
 
-一个基于图像识别的智能鼠标自动化工具，专为 Windows 11 系统优化设计。
+An intelligent mouse automation tool based on image recognition, optimized for Windows 11 systems.
 
 </div>
 
-## ✨ 功能特性
+## ✨ Features
 
-### 🎯 核心功能
+### 🎯 Core Functions
 
-- **智能图像匹配**：基于 OpenCV 的高精度模板匹配算法
-- **屏幕区域监控**：支持全屏、窗口、自定义区域监控
-- **鼠标模拟操作**：精确的鼠标点击、移动、拖拽模拟
-- **多目标检测**：同时监控多个目标图像，智能排序匹配
-- **实时状态监控**：详细的运行日志和匹配记录
+- **Intelligent Image Matching**: High-precision template matching algorithm based on OpenCV
+- **Screen Area Monitoring**: Support for full screen, window, and custom area monitoring
+- **Mouse Simulation Operations**: Precise mouse clicking, moving, and dragging simulation
+- **Multi-target Detection**: Simultaneous monitoring of multiple target images with intelligent sorting and matching
+- **Real-time Status Monitoring**: Detailed runtime logs and matching records
 
-### 🔧 高级特性
+### 🔧 Advanced Features
 
-- **DPI 自适应**：完美支持高分辨率显示器和多显示器环境
-- **点击动画效果**：可视化点击位置，提供直观反馈
-- **配置管理**：支持配置文件的保存、加载和导入导出
-- **快捷键操作**：丰富的快捷键支持，提升操作效率
-- **托盘运行**：支持最小化到系统托盘，后台静默运行
+- **DPI Adaptive**: Perfect support for high-resolution displays and multi-monitor environments
+- **Click Animation Effects**: Visual click position feedback with intuitive animations
+- **Configuration Management**: Support for saving, loading, importing, and exporting configuration files
+- **Hotkey Operations**: Rich hotkey support for enhanced operational efficiency
+- **System Tray Operation**: Support for minimizing to system tray with silent background operation
 
-### 🎨 用户体验
+### 🎨 User Experience
 
-- **现代化界面**：采用 ModernWpf 设计，符合 Windows 11 设计语言
-- **深蓝色主题**：统一的视觉风格，护眼舒适
-- **响应式布局**：适配不同屏幕尺寸和 DPI 设置
-- **直观操作**：拖拽上传、区域选择、一键启停
+- **Modern Interface**: Adopts ModernWpf design, conforming to Windows 11 design language
+- **Deep Blue Theme**: Unified visual style that's comfortable and eye-friendly
+- **Responsive Layout**: Adapts to different screen sizes and DPI settings
+- **Intuitive Operations**: Drag-and-drop upload, area selection, one-click start/stop
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 系统要求
+### System Requirements
 
-- **操作系统**：Windows 11 (推荐) 或 Windows 10 1903+
-- **运行时**：.NET 8.0 Runtime
-- **内存**：至少 512MB 可用内存
-- **显示器**：支持任意分辨率和 DPI 设置
+- **Operating System**: Windows 11 (recommended) or Windows 10 1903+
+- **Runtime**: .NET 8.0 Runtime
+- **Memory**: At least 512MB available memory
+- **Display**: Support for any resolution and DPI settings
 
-### 安装步骤
+### Installation Steps
 
-1. **下载发布版本**
+1. **Download Release Version**
 
    ```bash
-   # 从 Releases 页面下载最新版本
-   # 或克隆源代码自行编译
-   git clone https://github.com/your-username/HonyWing.git
+   # Download the latest version from the Releases page
+   # Or clone the source code and compile yourself
+   git clone https://github.com/reyisok/HonyWing_1.0.git
    ```
 
-2. **编译运行**（开发者）
+2. **Compile and Run** (Developers)
 
    ```bash
    cd HonyWing
@@ -64,48 +64,48 @@
    dotnet run --project src\HonyWing.UI\HonyWing.UI.csproj
    ```
 
-3. **首次使用**
-   - 启动应用程序
-   - 上传目标图像（支持 PNG、JPG、BMP 格式）
-   - 设置监控区域
-   - 配置匹配参数
-   - 点击"开始匹配"按钮
+3. **First Use**
+   - Launch the application
+   - Upload target images (supports PNG, JPG, BMP formats)
+   - Set monitoring area
+   - Configure matching parameters
+   - Click the "Start Matching" button
 
-## 📖 使用指南
+## 📖 User Guide
 
-### 基本操作流程
+### Basic Operation Flow
 
-1. **图像管理**
-   - 点击"选择图片"按钮或拖拽图片到上传区域
-   - 在预览区查看和调整目标图像
-   - 支持多图像管理，可添加、删除、排序
+1. **Image Management**
+   - Click the "Select Image" button or drag images to the upload area
+   - View and adjust target images in the preview area
+   - Support multi-image management with add, delete, and sort functions
 
-2. **区域设置**
-   - 选择监控模式：全屏、当前窗口、自定义区域
-   - 使用"选择区域"工具精确框选监控范围
-   - 实时预览选中区域
+2. **Area Settings**
+   - Select monitoring mode: full screen, current window, custom area
+   - Use the "Select Area" tool to precisely frame the monitoring range
+   - Real-time preview of selected area
 
-3. **参数配置**
-   - **匹配精度**：调整相似度阈值（0.1-1.0）
-   - **点击延迟**：设置点击间隔时间
-   - **点击类型**：左键、右键、双击
-   - **高级选项**：平滑移动、点击动画等
+3. **Parameter Configuration**
+   - **Match Precision**: Adjust similarity threshold (0.1-1.0)
+   - **Click Delay**: Set click interval time
+   - **Click Type**: Left click, right click, double click
+   - **Advanced Options**: Smooth movement, click animation, etc.
 
-4. **运行控制**
-   - **开始匹配**：启动自动监控和点击
-   - **暂停/继续**：临时暂停或恢复运行
-   - **停止**：完全停止监控
-   - **快捷键**：Space（暂停/继续）、Esc（停止）
+4. **Runtime Control**
+   - **Start Matching**: Begin automatic monitoring and clicking
+   - **Pause/Resume**: Temporarily pause or resume operation
+   - **Stop**: Completely stop monitoring
+   - **Hotkeys**: Space (pause/resume), Esc (stop)
 
-### 高级功能
+### Advanced Features
 
-#### DPI 适配
+#### DPI Adaptation
 
-- 自动检测系统 DPI 设置
-- 支持 100%、125%、150%、200% 等常见缩放比例
-- 多显示器环境下的智能坐标转换
+- Automatic detection of system DPI settings
+- Support for common scaling ratios like 100%, 125%, 150%, 200%
+- Intelligent coordinate conversion in multi-monitor environments
 
-#### 配置管理
+#### Configuration Management
 
 ```json
 {
@@ -122,123 +122,122 @@
 }
 ```
 
-## 🏗️ 技术架构
+## 🏗️ Technical Architecture
 
-### 项目结构
+### Project Structure
 
 ```
 HonyWing/
 ├── src/
-│   ├── HonyWing.Core/           # 核心业务逻辑
-│   │   ├── Interfaces/          # 接口定义
-│   │   ├── Models/              # 数据模型
-│   │   └── Services/            # 业务服务
-│   ├── HonyWing.Infrastructure/ # 基础设施层
-│   │   └── Services/            # 基础服务实现
-│   └── HonyWing.UI/            # WPF 用户界面
-│       ├── Views/              # 视图
-│       ├── ViewModels/         # 视图模型
-│       ├── Controls/           # 自定义控件
-│       ├── Converters/         # 值转换器
-│       └── Styles/             # 样式资源
-├── docs/                       # 项目文档
-├── tools/                      # 开发工具
-└── test/                       # 测试项目
+│   ├── HonyWing.Core/           # Core business logic
+│   │   ├── Interfaces/          # Interface definitions
+│   │   ├── Models/              # Data models
+│   │   └── Services/            # Business services
+│   ├── HonyWing.Infrastructure/ # Infrastructure layer
+│   │   └── Services/            # Infrastructure service implementations
+│   └── HonyWing.UI/            # WPF user interface
+│       ├── Views/              # Views
+│       ├── ViewModels/         # View models
+│       ├── Controls/           # Custom controls
+│       ├── Converters/         # Value converters
+│       └── Styles/             # Style resources
+├── docs/                       # Project documentation
+├── tools/                      # Development tools
+└── test/                       # Test projects
 ```
 
-### 技术栈
+### Technology Stack
 
-- **框架**：.NET 8.0 + WPF
-- **语言**：C# 12.0
-- **图像处理**：OpenCVSharp4
-- **UI 库**：ModernWpf
-- **依赖注入**：Microsoft.Extensions.DependencyInjection
-- **日志系统**：NLog
-- **配置管理**：System.Text.Json
+- **Framework**: .NET 8.0 + WPF
+- **Language**: C# 12.0
+- **Image Processing**: OpenCVSharp4
+- **UI Library**: ModernWpf
+- **Dependency Injection**: Microsoft.Extensions.DependencyInjection
+- **Logging System**: NLog
+- **Configuration Management**: System.Text.Json
 
-### 核心组件
+### Core Components
 
-#### 图像匹配引擎
+#### Image Matching Engine
 
-- 基于 OpenCV 模板匹配算法
-- 支持多尺度匹配和旋转不变性
-- 优化的匹配性能，4K 屏幕下 < 200ms
+- Based on OpenCV template matching algorithm
+- Support for multi-scale matching and rotation invariance
+- Optimized matching performance, < 200ms on 4K screens
 
-#### DPI 适配系统
+#### DPI Adaptation System
 
-- 实时 DPI 检测和坐标转换
-- 支持动态 DPI 变更
-- 多显示器环境适配
+- Real-time DPI detection and coordinate conversion
+- Support for dynamic DPI changes
+- Multi-monitor environment adaptation
 
-#### 鼠标模拟服务
+#### Mouse Simulation Service
 
-- 基于 Windows API (user32.dll)
-- 支持自然的鼠标移动轨迹
-- 可配置的点击延迟和动画效果
+- Based on Windows API (user32.dll)
+- Support for natural mouse movement trajectories
+- Configurable click delays and animation effects
 
-## 🤝 贡献指南
+## 🤝 Contributing Guidelines
 
-我们欢迎社区贡献！请遵循以下步骤：
+We welcome community contributions! Please follow these steps:
 
-1. **Fork 项目**
-2. **创建功能分支** (`git checkout -b feature/AmazingFeature`)
-3. **提交更改** (`git commit -m 'Add some AmazingFeature'`)
-4. **推送分支** (`git push origin feature/AmazingFeature`)
-5. **创建 Pull Request**
+1. **Fork the Project**
+2. **Create a Feature Branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit Changes** (`git commit -m 'Add some AmazingFeature'`)
+4. **Push to Branch** (`git push origin feature/AmazingFeature`)
+5. **Create Pull Request**
 
-### 开发规范
+### Development Standards
 
-- 遵循 C# 编码规范
-- 添加适当的单元测试
-- 更新相关文档
-- 确保代码通过所有测试
+- Follow C# coding conventions
+- Add appropriate unit tests
+- Update relevant documentation
+- Ensure code passes all tests
 
-## 📄 开源许可
+## 📄 Open Source License
 
-本项目采用修订版 MIT 许可证，详见 [LICENSE.txt](LICENSE.txt) 文件。
+This project is licensed under the Modified MIT License. See the [LICENSE.txt](LICENSE.txt) file for details.
 
-### 许可证要点
+### License Key Points
 
-- ✅ 个人学习和研究使用
-- ✅ 非商业性质的个人项目
-- ❌ 商业用途需要书面许可
-- ❌ 企业/组织内部使用需要授权
+- ✅ Personal learning and research use
+- ✅ Non-commercial personal projects
+- ❌ Commercial use requires written permission
+- ❌ Enterprise/organizational internal use requires authorization
 
-## 🙏 致谢
+## 🙏 Acknowledgments
 
-感谢以下开源项目的支持：
+Thanks to the following open source projects for their support:
 
-- [OpenCVSharp](https://github.com/shimat/opencvsharp) - 图像处理库
-- [ModernWpf](https://github.com/Kinnara/ModernWpf) - 现代化 WPF UI 库
-- [NLog](https://github.com/NLog/NLog) - 日志记录框架
-- [Microsoft.Toolkit.Mvvm](https://github.com/CommunityToolkit/dotnet) - MVVM 工具包
+- [OpenCVSharp](https://github.com/shimat/opencvsharp) - Image processing library
+- [ModernWpf](https://github.com/Kinnara/ModernWpf) - Modern WPF UI library
+- [NLog](https://github.com/NLog/NLog) - Logging framework
+- [Microsoft.Toolkit.Mvvm](https://github.com/CommunityToolkit/dotnet) - MVVM toolkit
 
-## 📞 联系方式
+## 📞 Contact Information
 
-- **作者**：Mr.Rey
-- **邮箱**：[reyisok@live.com]
-- **项目主页**：[https://github.com/your-username/HonyWing]
-- **问题反馈**：[Issues](https://github.com/your-username/HonyWing/issues)
+- **Author**: Mr.Rey
+- **Email**: [reyisok@live.com]
+- **Project Homepage**: [https://github.com/reyisok/HonyWing_1.0]
 
-## 致先驱者的致谢
+## Acknowledgment to Pioneers
 
-向所有在技术领域披荆斩棘的先驱者致以最诚挚的谢意。作为一名初学者，正是承蒙站在你们的肩膀上，从前人的经验与探索中汲取养分，我才得以突破思路局限，将想法落地为 HonyWing 中各类用于学习实践的功能模块，让技术探索的乐趣有了承载。
+Sincere gratitude to all the pioneers who have blazed trails in the field of technology. As a beginner, it is by standing on your shoulders and drawing nourishment from the experiences and explorations of predecessors that I have been able to break through the limitations of thinking and implement ideas into various functional modules in HonyWing for learning and practice, giving substance to the joy of technological exploration.
 
-特别感谢每一位使用 HonyWing 的用户。作为一款仅限个人学习用途的实验性系统，它的核心价值正来源于你们的体验与反馈 —— 无论是对屏幕监控、颜色识别、文字识别还是图像匹配功能的使用建议，亦或是在学习模拟操作、测试识别过程中发现的问题，这些真实反馈都成为了系统优化的重要方向，也让我这个初学者更清晰地理解 “技术服务于学习” 的核心目标。
+Special thanks to every user of HonyWing. As an experimental system limited to personal learning purposes, its core value comes from your experiences and feedback — whether it's usage suggestions for screen monitoring, color recognition, text recognition, or image matching functions, or problems discovered during learning simulation operations and testing recognition processes, these real feedbacks have become important directions for system optimization and have helped me, as a beginner, more clearly understand the core goal of "technology serving learning."
 
-需要说明的是，本项目目前仍处于完善阶段，功能打磨与体验优化仍在持续推进中。作为初学者，我在开发过程中难免有考虑不周之处，若大家在使用时遇到操作异常、识别偏差等问题，恳请多予包容，也欢迎随时提出改进意见，你们的包容与建议，会成为我成长和项目完善的重要助力。
+It should be noted that this project is still in the improvement stage, with function polishing and experience optimization continuing to advance. As a beginner, I inevitably have areas of insufficient consideration during development. If you encounter operational anomalies, recognition deviations, or other issues during use, please be tolerant and feel free to provide improvement suggestions at any time. Your tolerance and suggestions will become important assistance for my growth and project improvement.
 
-在整个项目的学习与开发过程中，我更深刻地体会到 “规范” 二字的重量。一套清晰的代码规范、成熟的开发最佳实践，不仅让我这个初学者能更轻松地梳理代码逻辑，更为项目后续的维护与功能扩展扫清了障碍。那些经过实践验证的规范指导，如同技术道路上的灯塔，让我少走了许多弯路，也让这个实验性项目始终保持着可迭代、可优化的活力。
+Throughout the learning and development process of the entire project, I have gained a deeper understanding of the weight of the word "standards." A clear set of code standards and mature development best practices not only allow me, as a beginner, to more easily organize code logic, but also clear obstacles for subsequent project maintenance and feature expansion. Those practice-verified standard guidelines, like lighthouses on the technical path, have helped me avoid many detours and kept this experimental project always maintaining the vitality of being iterable and optimizable.
 
-最后，愿每一位探索者都能在技术学习中收获乐趣，Enjoy your lucky day！
+Finally, may every explorer find joy in technical learning. Enjoy your lucky day!
 
 Mr. Rey
-By HonyWing 团队（包含 AI 助手）
+By HonyWing Team (including AI Assistant)
 
 ---
 
 <div align="center">
 
-**如果这个项目对您有帮助，请考虑给它一个 ⭐**
+**If this project helps you, please consider giving it a ⭐**
 
 </div>

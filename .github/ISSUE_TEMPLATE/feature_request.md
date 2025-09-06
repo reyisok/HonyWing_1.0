@@ -1,118 +1,118 @@
 ---
-name: 功能请求
-about: 为这个项目建议一个想法
+name: Feature Request
+about: Suggest an idea for this project
 title: '[FEATURE] '
 labels: 'enhancement'
 assignees: ''
 ---
 
-## 💡 功能描述
+## 💡 Feature Description
 
-简要描述您建议的功能。
+Briefly describe the feature you are suggesting.
 
-## 🎯 问题背景
+## 🎯 Problem Background
 
-您的功能请求是否与某个问题相关？请描述一下。
-例如：我总是对 [...] 感到沮丧
+Is your feature request related to a problem? Please describe.
+For example: I'm always frustrated when [...]
 
-## 🚀 解决方案
+## 🚀 Proposed Solution
 
-描述您希望实现的解决方案。
-清晰简洁地描述您希望发生的事情。
+Describe the solution you'd like to see implemented.
+Clearly and concisely describe what you want to happen.
 
-## 🔄 替代方案
+## 🔄 Alternative Solutions
 
-描述您考虑过的任何替代解决方案或功能。
+Describe any alternative solutions or features you've considered.
 
-## 📋 详细需求
+## 📋 Detailed Requirements
 
-### 功能规格
-- [ ] 需求1：描述具体需求
-- [ ] 需求2：描述具体需求
-- [ ] 需求3：描述具体需求
+### Feature Specifications
+- [ ] Requirement 1: Describe specific requirement
+- [ ] Requirement 2: Describe specific requirement
+- [ ] Requirement 3: Describe specific requirement
 
-### 用户界面
-描述期望的用户界面变化（如果适用）：
-- 新增的按钮、菜单项
-- 界面布局调整
-- 交互方式改进
+### User Interface
+Describe expected user interface changes (if applicable):
+- New buttons, menu items
+- Interface layout adjustments
+- Interaction improvements
 
-### 技术要求
-- **性能要求**: [例如：响应时间 < 100ms]
-- **兼容性要求**: [例如：支持 Windows 10+]
-- **依赖项**: [例如：需要新的 NuGet 包]
+### Technical Requirements
+- **Performance Requirements**: [e.g., Response time < 100ms]
+- **Compatibility Requirements**: [e.g., Support Windows 10+]
+- **Dependencies**: [e.g., Requires new NuGet packages]
 
-## 🎨 用户体验
+## 🎨 User Experience
 
-### 使用场景
-描述典型的使用场景：
+### Use Cases
+Describe typical use cases:
 
-1. **场景1**: 用户想要...
-2. **场景2**: 当用户需要...
-3. **场景3**: 在...情况下...
+1. **Scenario 1**: User wants to...
+2. **Scenario 2**: When user needs to...
+3. **Scenario 3**: In the situation where...
 
-### 用户流程
-描述用户如何使用这个功能：
+### User Flow
+Describe how users would use this feature:
 
-1. 用户打开...
-2. 用户点击...
-3. 系统显示...
-4. 用户完成...
+1. User opens...
+2. User clicks...
+3. System displays...
+4. User completes...
 
-## 📊 优先级和影响
+## 📊 Priority and Impact
 
-### 优先级
-- [ ] 高 - 核心功能，急需实现
-- [ ] 中 - 重要功能，可以排期
-- [ ] 低 - 锦上添花，有时间再做
+### Priority
+- [ ] High - Core functionality, urgent implementation needed
+- [ ] Medium - Important feature, can be scheduled
+- [ ] Low - Nice to have, implement when time permits
 
-### 影响范围
-- [ ] 用户体验改进
-- [ ] 性能提升
-- [ ] 功能扩展
-- [ ] 兼容性改进
-- [ ] 其他：_______
+### Impact Scope
+- [ ] User experience improvement
+- [ ] Performance enhancement
+- [ ] Feature expansion
+- [ ] Compatibility improvement
+- [ ] Other: _______
 
-## 🔧 技术实现建议
+## 🔧 Technical Implementation Suggestions
 
-如果您有技术背景，可以提供实现建议：
+If you have technical background, you can provide implementation suggestions:
 
-### 涉及的模块
-- [ ] UI 层 (HonyWing.UI)
-- [ ] 核心逻辑 (HonyWing.Core)
-- [ ] 基础设施 (HonyWing.Infrastructure)
-- [ ] 配置系统
-- [ ] 其他：_______
+### Modules Involved
+- [ ] UI Layer (HonyWing.UI)
+- [ ] Core Logic (HonyWing.Core)
+- [ ] Infrastructure (HonyWing.Infrastructure)
+- [ ] Configuration System
+- [ ] Other: _______
 
-### 实现思路
+### Implementation Ideas
 ```
-在这里描述您的实现思路
+Describe your implementation ideas here
 ```
 
-## 📷 原型或示例
+## 📷 Prototypes or Examples
 
-如果有原型图、线框图或参考示例，请在这里提供：
+If you have prototypes, wireframes, or reference examples, please provide them here:
 
-<!-- 可以拖拽图片到这里 -->
+<!-- You can drag images here -->
 
-## 📚 参考资料
+## 📚 References
 
-提供任何相关的参考资料、文档或类似功能的实现：
+Provide any relevant reference materials, documentation, or similar feature implementations:
 
-- [参考链接1](URL)
-- [参考链接2](URL)
+- [Reference Link 1](URL)
+- [Reference Link 2](URL)
 
-## 📝 附加信息
+## 📝 Additional Information
 
-添加任何其他有关功能请求的上下文或截图。
+Add any other context or screenshots about the feature request.
 
 ---
 
-### 检查清单
+### Checklist
 
-在提交此功能请求之前，请确认：
+Before submitting this feature request, please confirm:
 
-- [ ] 我已经搜索了现有的 Issues，确认这不是重复请求
-- [ ] 我已经提供了清晰的功能描述和使用场景
-- [ ] 我已经考虑了这个功能对现有用户的影响
-- [ ] 我理解这个功能可能需要时间来实现
+- [ ] I have searched existing issues to ensure this is not a duplicate request
+- [ ] I have provided clear feature description and use cases
+- [ ] I have considered the impact of this feature on existing users
+- [ ] I understand that this feature may take time to implement
