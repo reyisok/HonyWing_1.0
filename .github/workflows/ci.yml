@@ -1,0 +1,234 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  release:
+    types: [ published ]
+
+env:
+  DOTNET_VERSION: '8.0.x'
+  SOLUTION_PATH: 'HonyWing.sln'
+  BUILD_CONFIGURATION: 'Release'
+
+jobs:
+  # 代码质量检查
+  code-quality:
+    name: Code Quality Check
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Build solution
+      run: dotnet build ${{ env.SOLUTION_PATH }} --configuration ${{ env.BUILD_CONFIGURATION }} --no-restore
+      
+    - name: Run code analysis
+      run: |
+        dotnet format --verify-no-changes --verbosity diagnostic ${{ env.SOLUTION_PATH }}
+      continue-on-error: true
+
+  # 单元测试
+  unit-tests:
+    name: Unit Tests
+    runs-on: windows-latest
+    needs: code-quality
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Build solution
+      run: dotnet build ${{ env.SOLUTION_PATH }} --configuration ${{ env.BUILD_CONFIGURATION }} --no-restore
+      
+    - name: Run unit tests
+      run: |
+        dotnet test ${{ env.SOLUTION_PATH }} \
+          --configuration ${{ env.BUILD_CONFIGURATION }} \
+          --no-build \
+          --verbosity normal \
+          --logger trx \
+          --collect:"XPlat Code Coverage" \
+          --results-directory ./TestResults
+      
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: test-results
+        path: ./TestResults
+        
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v3
+      if: always()
+      with:
+        directory: ./TestResults
+        flags: unittests
+        name: codecov-umbrella
+
+  # 构建和打包
+  build-and-package:
+    name: Build and Package
+    runs-on: windows-latest
+    needs: [code-quality, unit-tests]
+    
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+        
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Build solution
+      run: |
+        dotnet build ${{ env.SOLUTION_PATH }} \
+          --configuration ${{ matrix.configuration }} \
+          --no-restore \
+          --verbosity normal
+      
+    - name: Publish application
+      run: |
+        dotnet publish src/HonyWing.UI/HonyWing.UI.csproj \
+          --configuration ${{ matrix.configuration }} \
+          --no-build \
+          --output ./publish/${{ matrix.configuration }} \
+          --self-contained false \
+          --verbosity normal
+      
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-${{ matrix.configuration }}
+        path: ./publish/${{ matrix.configuration }}
+        retention-days: 30
+
+  # 安全扫描
+  security-scan:
+    name: Security Scan
+    runs-on: windows-latest
+    needs: code-quality
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Run security scan
+      run: |
+        dotnet list package --vulnerable --include-transitive 2>&1 | tee security-scan.log
+        if (Select-String -Path security-scan.log -Pattern "has the following vulnerable packages") {
+          Write-Host "::warning::发现安全漏洞，请检查依赖包"
+          Get-Content security-scan.log
+        }
+      shell: pwsh
+      
+    - name: Upload security scan results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: security-scan-results
+        path: security-scan.log
+
+  # 发布到 GitHub Releases
+  release:
+    name: Create Release
+    runs-on: windows-latest
+    needs: [build-and-package, security-scan]
+    if: github.event_name == 'release'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: build-Release
+        path: ./release
+        
+    - name: Create release package
+      run: |
+        $version = "${{ github.event.release.tag_name }}"
+        $packageName = "HonyWing-$version-win-x64"
+        
+        # 创建发布目录
+        New-Item -ItemType Directory -Path "./packages" -Force
+        
+        # 复制文件到发布目录
+        Copy-Item -Path "./release/*" -Destination "./packages/$packageName/" -Recurse -Force
+        Copy-Item -Path "README.md" -Destination "./packages/$packageName/" -Force
+        Copy-Item -Path "LICENSE.txt" -Destination "./packages/$packageName/" -Force
+        Copy-Item -Path "THIRD_PARTY_LICENSES.md" -Destination "./packages/$packageName/" -Force
+        
+        # 创建 ZIP 包
+        Compress-Archive -Path "./packages/$packageName" -DestinationPath "./packages/$packageName.zip"
+        
+        Write-Host "Created package: $packageName.zip"
+      shell: pwsh
+      
+    - name: Upload release assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ./packages/HonyWing-${{ github.event.release.tag_name }}-win-x64.zip
+        asset_name: HonyWing-${{ github.event.release.tag_name }}-win-x64.zip
+        asset_content_type: application/zip
+
+  # 通知
+  notify:
+    name: Notify
+    runs-on: windows-latest
+    needs: [build-and-package, security-scan]
+    if: always()
+    
+    steps:
+    - name: Notify success
+      if: needs.build-and-package.result == 'success' && needs.security-scan.result == 'success'
+      run: |
+        Write-Host "✅ CI/CD 流水线执行成功！"
+        Write-Host "📦 构建完成，所有测试通过"
+        Write-Host "🔒 安全扫描通过"
+      
+    - name: Notify failure
+      if: needs.build-and-package.result == 'failure' || needs.security-scan.result == 'failure'
+      run: |
+        Write-Host "❌ CI/CD 流水线执行失败！"
+        Write-Host "请检查构建日志和测试结果"
+        exit 1

@@ -1,0 +1,19 @@
+<UserControl x:Class="HonyWing.UI.Controls.ClickAnimationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Transparent"
+             IsHitTestVisible="False">
+    <Grid>
+        <!-- 点击动画圆圈 -->
+        <Ellipse x:Name="AnimationCircle"
+                 Width="15" Height="15"
+                 Fill="Red"
+                 Opacity="0.8"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center">
+            <Ellipse.RenderTransform>
+                <ScaleTransform x:Name="ScaleTransform" ScaleX="1" ScaleY="1"/>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+    </Grid>
+</UserControl>

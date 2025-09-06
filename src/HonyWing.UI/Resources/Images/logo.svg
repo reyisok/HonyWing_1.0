@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <!-- 外圆环 -->
+  <circle cx="12" cy="12" r="10" stroke="#6DDCC0" stroke-width="2" fill="none"/>
+  
+  <!-- 内部图标 - 代表智能识别的眼睛 -->
+  <ellipse cx="12" cy="12" rx="6" ry="4" fill="#6DDCC0" opacity="0.3"/>
+  
+  <!-- 瞳孔 -->
+  <circle cx="12" cy="12" r="2" fill="#6DDCC0"/>
+  
+  <!-- 扫描线 -->
+  <line x1="6" y1="8" x2="18" y2="8" stroke="#6DDCC0" stroke-width="1" opacity="0.6"/>
+  <line x1="6" y1="16" x2="18" y2="16" stroke="#6DDCC0" stroke-width="1" opacity="0.6"/>
+  
+  <!-- 角标 -->
+  <rect x="4" y="4" width="3" height="3" fill="none" stroke="#6DDCC0" stroke-width="1"/>
+  <rect x="17" y="4" width="3" height="3" fill="none" stroke="#6DDCC0" stroke-width="1"/>
+  <rect x="4" y="17" width="3" height="3" fill="none" stroke="#6DDCC0" stroke-width="1"/>
+  <rect x="17" y="17" width="3" height="3" fill="none" stroke="#6DDCC0" stroke-width="1"/>
+</svg>

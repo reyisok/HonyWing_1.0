@@ -1,0 +1,1016 @@
+<!--
+@author: Mr.Rey Copyright © 2025
+@created: 2025-01-06 14:30:00
+@modified: 2025-01-06 14:30:00
+@version: 1.0.0
+深蓝色统一主题样式
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ui="http://schemas.modernwpf.com/2019">
+
+    <!-- 深蓝色主题颜色定义 -->
+    <SolidColorBrush x:Key="DarkBlueBackgroundBrush" Color="#1E3A8A"/>
+    <SolidColorBrush x:Key="DarkBlueLightBackgroundBrush" Color="#2563EB"/>
+    <SolidColorBrush x:Key="DarkBlueDarkBackgroundBrush" Color="#1E40AF"/>
+    <SolidColorBrush x:Key="WhiteForegroundBrush" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="LightGrayForegroundBrush" Color="#E5E7EB"/>
+    <SolidColorBrush x:Key="DarkBlueBorderBrush" Color="#3B82F6"/>
+    <SolidColorBrush x:Key="HoverBackgroundBrush" Color="#3B82F6"/>
+    <SolidColorBrush x:Key="PressedBackgroundBrush" Color="#2563EB"/>
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#374151"/>
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#9CA3AF"/>
+
+    <!-- 窗口和面板样式 -->
+    <Style x:Key="DarkBlueWindowStyle" TargetType="Window">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="FontSize" Value="13"/>
+    </Style>
+
+    <Style x:Key="DarkBluePanelStyle" TargetType="Panel">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+    </Style>
+
+    <Style x:Key="DarkBlueGridStyle" TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+    </Style>
+
+    <Style x:Key="DarkBlueStackPanelStyle" TargetType="StackPanel">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+    </Style>
+
+    <Style x:Key="DarkBlueDockPanelStyle" TargetType="DockPanel">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+    </Style>
+
+    <Style x:Key="DarkBlueWrapPanelStyle" TargetType="WrapPanel">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+    </Style>
+
+    <!-- 边框样式 -->
+    <Style x:Key="DarkBlueBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+    </Style>
+
+    <!-- 卡片面板样式 -->
+    <Style x:Key="DarkBlueCardPanelStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource DarkBlueLightBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="16"/>
+        <Setter Property="Margin" Value="8"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="Black" Opacity="0.3" ShadowDepth="2" BlurRadius="8"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 文本样式 -->
+    <Style x:Key="DarkBlueTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <Style x:Key="DarkBlueTitleTextStyle" TargetType="TextBlock" BasedOn="{StaticResource DarkBlueTextBlockStyle}">
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="0,0,0,16"/>
+    </Style>
+
+    <Style x:Key="DarkBlueSubtitleTextStyle" TargetType="TextBlock" BasedOn="{StaticResource DarkBlueTextBlockStyle}">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="0,0,0,12"/>
+    </Style>
+
+    <Style x:Key="DarkBlueHeading3TextStyle" TargetType="TextBlock" BasedOn="{StaticResource DarkBlueTextBlockStyle}">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="0,0,0,8"/>
+    </Style>
+
+    <Style x:Key="DarkBlueLabelTextStyle" TargetType="TextBlock" BasedOn="{StaticResource DarkBlueTextBlockStyle}">
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="DarkBlueCaptionTextStyle" TargetType="TextBlock" BasedOn="{StaticResource DarkBlueTextBlockStyle}">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+    </Style>
+
+    <!-- 按钮样式 -->
+    <Style x:Key="DarkBluePrimaryButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource DarkBlueLightBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="MinWidth" Value="120"/>
+        <Setter Property="MinHeight" Value="32"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource PressedBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource DisabledBackgroundBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DarkBlueSecondaryButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="MinWidth" Value="120"/>
+        <Setter Property="MinHeight" Value="32"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource PressedBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource DisabledBackgroundBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 通用按钮样式 -->
+    <Style x:Key="DarkBlueButtonStyle" TargetType="Button" BasedOn="{StaticResource DarkBluePrimaryButtonStyle}">
+        <!-- 继承主要按钮样式的所有属性 -->
+    </Style>
+
+    <!-- 文本框样式 -->
+    <Style x:Key="DarkBlueTextBoxStyle" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource DarkBlueLightBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="6,4"/>
+        <Setter Property="MinHeight" Value="28"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="CaretBrush" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="SelectionBrush" Value="{StaticResource HoverBackgroundBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4">
+                        <ScrollViewer x:Name="PART_ContentHost" Margin="{TemplateBinding Padding}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource DisabledBackgroundBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 组合框样式 -->
+    <Style x:Key="DarkBlueComboBoxStyle" TargetType="ComboBox">
+        <Setter Property="Background" Value="{StaticResource DarkBlueLightBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="6,4"/>
+        <Setter Property="MinHeight" Value="28"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <ToggleButton x:Name="ToggleButton"
+                                      Background="{TemplateBinding Background}"
+                                      BorderBrush="{TemplateBinding BorderBrush}"
+                                      BorderThickness="{TemplateBinding BorderThickness}"
+                                      Focusable="False"
+                                      IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                      ClickMode="Press">
+                            <ToggleButton.Template>
+                                <ControlTemplate TargetType="ToggleButton">
+                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="4">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="20"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Path Grid.Column="1"
+                                                  HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"
+                                                  Data="M 0 0 L 4 4 L 8 0 Z"
+                                                  Fill="{StaticResource WhiteForegroundBrush}"/>
+                                        </Grid>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </ToggleButton.Template>
+                        </ToggleButton>
+                        <ContentPresenter x:Name="ContentSite"
+                                          IsHitTestVisible="False"
+                                          Content="{TemplateBinding SelectionBoxItem}"
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                          Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Left"/>
+                        <TextBox x:Name="PART_EditableTextBox"
+                                 Style="{x:Null}"
+                                 Background="Transparent"
+                                 Foreground="{StaticResource WhiteForegroundBrush}"
+                                 BorderThickness="0"
+                                 Margin="{TemplateBinding Padding}"
+                                 Focusable="True"
+                                 IsReadOnly="{TemplateBinding IsReadOnly}"
+                                 Visibility="Hidden"/>
+                        <Popup x:Name="Popup"
+                               Placement="Bottom"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Slide">
+                            <Grid x:Name="DropDown"
+                                  SnapsToDevicePixels="True"
+                                  MinWidth="{TemplateBinding ActualWidth}"
+                                  MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <Border Background="{StaticResource DarkBlueLightBackgroundBrush}"
+                                        BorderBrush="{StaticResource DarkBlueBorderBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="4">
+                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained"/>
+                                    </ScrollViewer>
+                                </Border>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEditable" Value="True">
+                            <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 组合框项样式 -->
+    <Style x:Key="DarkBlueComboBoxItemStyle" TargetType="ComboBoxItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="Padding" Value="12,8"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{StaticResource PressedBackgroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 列表框样式 -->
+    <Style x:Key="DarkBlueListBoxStyle" TargetType="ListBox">
+        <Setter Property="Background" Value="{StaticResource DarkBlueLightBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4">
+                        <ScrollViewer Padding="{TemplateBinding Padding}">
+                            <ItemsPresenter/>
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 列表框项样式 -->
+    <Style x:Key="DarkBlueListBoxItemStyle" TargetType="ListBoxItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="Padding" Value="12,8"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}"
+                            Margin="{TemplateBinding Margin}"
+                            CornerRadius="4">
+                        <ContentPresenter/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{StaticResource PressedBackgroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ListView样式 -->
+    <Style x:Key="DarkBlueListViewStyle" TargetType="ListView">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListView">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4">
+                        <ScrollViewer>
+                            <ItemsPresenter/>
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ListView项样式 -->
+    <Style x:Key="DarkBlueListViewItemStyle" TargetType="ListViewItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="Padding" Value="12,8"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListViewItem">
+                    <Border Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}"
+                            Margin="{TemplateBinding Margin}"
+                            CornerRadius="4">
+                        <ContentPresenter/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{StaticResource PressedBackgroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 复选框样式 -->
+    <Style x:Key="DarkBlueCheckBoxStyle" TargetType="CheckBox">
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="Padding" Value="6,0,0,0"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="CheckBoxBorder"
+                                Grid.Column="0"
+                                Width="16" Height="16"
+                                Background="{StaticResource DarkBlueLightBackgroundBrush}"
+                                BorderBrush="{StaticResource DarkBlueBorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="2">
+                            <Path x:Name="CheckMark"
+                                  Data="M 1,4.5 L 4,7.5 L 9,1.5"
+                                  Stroke="{StaticResource WhiteForegroundBrush}"
+                                  StrokeThickness="2"
+                                  Visibility="Collapsed"/>
+                        </Border>
+                        <ContentPresenter Grid.Column="1"
+                                          Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="CheckBoxBorder" Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 单选按钮样式 -->
+    <Style x:Key="DarkBlueRadioButtonStyle" TargetType="RadioButton">
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="Padding" Value="6,0,0,0"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="RadioButtonBorder"
+                                Grid.Column="0"
+                                Width="16" Height="16"
+                                Background="{StaticResource DarkBlueLightBackgroundBrush}"
+                                BorderBrush="{StaticResource DarkBlueBorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="8">
+                            <Ellipse x:Name="RadioButtonMark"
+                                     Width="8" Height="8"
+                                     Fill="{StaticResource WhiteForegroundBrush}"
+                                     Visibility="Collapsed"/>
+                        </Border>
+                        <ContentPresenter Grid.Column="1"
+                                          Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="RadioButtonMark" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="RadioButtonBorder" Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="RadioButtonBorder" Property="BorderBrush" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 分组框样式 -->
+    <Style x:Key="DarkBlueGroupBoxStyle" TargetType="GroupBox">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="GroupBox">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0"
+                                Background="Transparent"
+                                Padding="8,4"
+                                Margin="8,0,0,0">
+                            <ContentPresenter ContentSource="Header"/>
+                        </Border>
+                        <Border Grid.Row="1"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 标签页控件样式 -->
+    <Style x:Key="DarkBlueTabControlStyle" TargetType="TabControl">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabControl">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TabPanel Grid.Row="0"
+                                  IsItemsHost="True"
+                                  Background="{StaticResource DarkBlueBackgroundBrush}"/>
+                        <Border Grid.Row="1"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="0,0,6,6">
+                            <ContentPresenter ContentSource="SelectedContent" Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 标签页项样式 -->
+    <Style x:Key="DarkBlueTabItemStyle" TargetType="TabItem">
+        <Setter Property="Background" Value="{StaticResource DarkBlueLightBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1,1,1,0"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="6,6,0,0"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+                            <Setter Property="BorderThickness" Value="1,1,1,0"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 状态栏样式 -->
+    <Style x:Key="DarkBlueStatusBarStyle" TargetType="StatusBar">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="0,1,0,0"/>
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="Padding" Value="8,0"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+    </Style>
+
+    <!-- 滚动条样式 -->
+    <Style x:Key="DarkBlueScrollBarStyle" TargetType="ScrollBar">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="Width" Value="12"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollBar">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6"/>
+                        <Track x:Name="PART_Track" IsDirectionReversed="True">
+                            <Track.Thumb>
+                                <Thumb>
+                                    <Thumb.Template>
+                                        <ControlTemplate TargetType="Thumb">
+                                            <Border Background="{StaticResource DarkBlueBorderBrush}" CornerRadius="6"/>
+                                        </ControlTemplate>
+                                    </Thumb.Template>
+                                </Thumb>
+                            </Track.Thumb>
+                        </Track>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 工具提示样式 -->
+    <Style x:Key="DarkBlueToolTipStyle" TargetType="ToolTip">
+        <Setter Property="Background" Value="{StaticResource DarkBlueLightBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="8,4"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToolTip">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 上下文菜单样式 -->
+    <Style x:Key="DarkBlueContextMenuStyle" TargetType="ContextMenu">
+        <Setter Property="Background" Value="{StaticResource DarkBlueLightBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContextMenu">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="6"
+                            Padding="{TemplateBinding Padding}">
+                        <StackPanel IsItemsHost="True"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 菜单项样式 -->
+    <Style x:Key="DarkBlueMenuItemStyle" TargetType="MenuItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="Padding" Value="12,8"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="4">
+                        <ContentPresenter/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 切换按钮样式 -->
+    <Style x:Key="DarkBlueToggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="MinWidth" Value="80"/>
+        <Setter Property="MinHeight" Value="32"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource DarkBlueLightBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource PressedBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource DisabledBackgroundBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 分隔符样式 -->
+    <Style x:Key="DarkBlueSeparatorStyle" TargetType="Separator">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="Width" Value="1"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Margin" Value="8,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Separator">
+                    <Rectangle Fill="{TemplateBinding Background}"
+                               Width="{TemplateBinding Width}"
+                               Height="{TemplateBinding Height}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 紧凑按钮样式 -->
+    <Style x:Key="CompactButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="12,6"/>
+        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="MinHeight" Value="28"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="3"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource PressedBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource DisabledBackgroundBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 现代按钮样式 -->
+    <Style x:Key="ModernButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource DarkBlueLightBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="12,6"/>
+        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="MinHeight" Value="28"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, Arial"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="3"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource PressedBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource DisabledBackgroundBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Slider样式 -->
+    <Style x:Key="DarkBlueSliderStyle" TargetType="Slider">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Slider">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TickBar x:Name="TopTick" Grid.Row="0" Height="4" Margin="0,0,0,2" Placement="Top" Fill="{StaticResource LightGrayForegroundBrush}" Visibility="Collapsed"/>
+                        <Border x:Name="TrackBackground" Grid.Row="1" Height="4" Background="{StaticResource DarkBlueDarkBackgroundBrush}" BorderBrush="{StaticResource DarkBlueBorderBrush}" BorderThickness="1" CornerRadius="2"/>
+                        <Rectangle x:Name="PART_SelectionRange" Grid.Row="1" Height="4" Fill="{StaticResource DarkBlueBorderBrush}" Visibility="Hidden"/>
+                        <Track x:Name="PART_Track" Grid.Row="1">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Style="{x:Null}" Command="Slider.DecreaseLarge" Background="Transparent"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Style="{x:Null}" Command="Slider.IncreaseLarge" Background="Transparent"/>
+                            </Track.IncreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb x:Name="Thumb" Background="{StaticResource WhiteForegroundBrush}" BorderBrush="{StaticResource DarkBlueBorderBrush}" BorderThickness="1" Height="16" Width="16">
+                                    <Thumb.Template>
+                                        <ControlTemplate TargetType="Thumb">
+                                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="8"/>
+                                        </ControlTemplate>
+                                    </Thumb.Template>
+                                </Thumb>
+                            </Track.Thumb>
+                        </Track>
+                        <TickBar x:Name="BottomTick" Grid.Row="2" Height="4" Margin="0,2,0,0" Placement="Bottom" Fill="{StaticResource LightGrayForegroundBrush}" Visibility="Collapsed"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TickPlacement" Value="TopLeft">
+                            <Setter TargetName="TopTick" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="TickPlacement" Value="BottomRight">
+                            <Setter TargetName="BottomTick" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="TickPlacement" Value="Both">
+                            <Setter TargetName="TopTick" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="BottomTick" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsSelectionRangeEnabled" Value="True">
+                            <Setter TargetName="PART_SelectionRange" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Thumb" Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+                            <Setter TargetName="TrackBackground" Property="Background" Value="{StaticResource DisabledBackgroundBrush}"/>
+                            <Setter TargetName="Thumb" Property="Background" Value="{StaticResource DisabledBackgroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- DatePicker样式 -->
+    <Style x:Key="DarkBlueDatePickerStyle" TargetType="DatePicker">
+        <Setter Property="Background" Value="{StaticResource DarkBlueBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkBlueBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="4,2"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DatePicker">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <DatePickerTextBox x:Name="PART_TextBox"
+                                             Grid.Column="0"
+                                             Foreground="{TemplateBinding Foreground}"
+                                             Background="Transparent"
+                                             BorderThickness="0"
+                                             Padding="{TemplateBinding Padding}"
+                                             FontSize="{TemplateBinding FontSize}"/>
+                            <Button x:Name="PART_Button"
+                                  Grid.Column="1"
+                                  Background="Transparent"
+                                  BorderThickness="0"
+                                  Width="20" Height="20"
+                                  Content="📅"
+                                  Foreground="{StaticResource LightGrayForegroundBrush}"
+                                  FontSize="10"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource HoverBorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource DisabledBackgroundBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

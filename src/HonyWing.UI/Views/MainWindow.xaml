@@ -1,0 +1,282 @@
+<Window x:Class="HonyWing.UI.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:HonyWing.UI.Controls"
+        Title="HonyWing - 智能图像识别与自动化操作工具"
+        Height="800" Width="1050"
+        MinHeight="600" MinWidth="1050" MaxWidth="1050"
+        WindowStartupLocation="CenterScreen"
+        Background="#FF1E3A5F" Foreground="White"
+        ResizeMode="CanMinimize"
+        >
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <!-- 基本颜色定义 -->
+            <SolidColorBrush x:Key="DarkBlueBackgroundBrush" Color="#FF1E3A5F"/>
+            <SolidColorBrush x:Key="DarkBlueLightBackgroundBrush" Color="#FF2A4A70"/>
+            <SolidColorBrush x:Key="DarkBlueBorderBrush" Color="#FF3A5A80"/>
+            <SolidColorBrush x:Key="WhiteForegroundBrush" Color="White"/>
+
+            <!-- 基本样式定义 -->
+            <Style x:Key="CompactButtonStyle" TargetType="Button" BasedOn="{StaticResource DarkBlueButtonStyle}">
+                <Setter Property="Margin" Value="2"/>
+                <Setter Property="Padding" Value="12,6"/>
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="MinWidth" Value="100"/>
+                <Setter Property="MinHeight" Value="32"/>
+            </Style>
+
+            <Style x:Key="SectionHeaderStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Margin" Value="0,8,0,4"/>
+                <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+            </Style>
+
+            <Style x:Key="SubHeaderStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontWeight" Value="Medium"/>
+                <Setter Property="Margin" Value="0,4,0,2"/>
+                <Setter Property="Foreground" Value="{StaticResource WhiteForegroundBrush}"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 工具栏 - 替代菜单栏 -->
+        <Border Grid.Row="0" Background="{StaticResource DarkBlueBackgroundBrush}" BorderBrush="{StaticResource DarkBlueBorderBrush}" BorderThickness="0,0,0,1" Padding="8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- 左侧工具按钮组 -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <!-- 移除区域按钮 -->
+                </StackPanel>
+
+                <!-- 左侧标题和Logo -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal"
+                           HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <!-- Logo -->
+                    <Image Source="/HonyWing.UI;component/Resources/Images/logo.svg"
+                           Width="24" Height="24" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                    <!-- 标题文字 -->
+                    <TextBlock Text="HonyWing - 智能图像识别与自动化操作工具"
+                              FontSize="20" FontWeight="SemiBold"
+                              VerticalAlignment="Center"
+                              Foreground="{StaticResource WhiteForegroundBrush}"/>
+                    <!-- 热键说明 -->
+                    <TextBlock Text="全局热键ESC停止模拟任务，若热键冲突，先关掉本程序"
+                              FontSize="10" 
+                              VerticalAlignment="Center"
+                              Foreground="#FFB0B0B0"
+                              Margin="8,0,0,0"/>
+                </StackPanel>
+
+                <!-- 右侧功能按钮组 -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <!-- 退出按钮 -->
+                    <Button Content="退出" Style="{StaticResource CompactButtonStyle}"
+                            Command="{Binding ExitCommand}" 
+                            ToolTip="退出应用程序"
+                            Margin="8,0,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- 主内容区域 - 上中下布局 -->
+        <Grid Grid.Row="1" Margin="8,10,8,8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" MinHeight="80"/>
+                <RowDefinition Height="1*" MinHeight="220"/>
+                <RowDefinition Height="2.22*" MinHeight="300"/>
+            </Grid.RowDefinitions>
+
+            <!-- 上部区域 - 图片选择和基本控制 -->
+            <Border Grid.Row="0" Background="{StaticResource DarkBlueBackgroundBrush}"
+                    CornerRadius="6" Padding="12" Margin="0,0,0,26">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- 图片选择 -->
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top">
+                        <TextBlock Text="目标图片:" FontSize="12" FontWeight="Medium"
+                                  Foreground="{StaticResource WhiteForegroundBrush}"
+                                  VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <Button Content="选择图片" Style="{StaticResource CompactButtonStyle}"
+                                Command="{Binding SelectReferenceImageCommand}" Margin="0,0,12,0"/>
+                    </StackPanel>
+
+                    <!-- 图片信息显示 -->
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="12,0">
+                        <TextBlock Text="{Binding SelectedImageFileName}" FontSize="12" FontWeight="Medium"
+                                  Foreground="{StaticResource WhiteForegroundBrush}" TextTrimming="CharacterEllipsis"/>
+                        <TextBlock Text="{Binding SelectedImagePath}" FontSize="10"
+                                  Foreground="{StaticResource WhiteForegroundBrush}"
+                                  TextTrimming="CharacterEllipsis"/>
+                    </StackPanel>
+
+                    <!-- 移除监控区域选择和运行控制，已移动到系统配置区 -->
+                </Grid>
+            </Border>
+
+            <!-- 中部区域 - 详细设置 -->
+            <Border Background="{StaticResource DarkBlueBackgroundBrush}"
+                    CornerRadius="6" Padding="12" Margin="0,49,0,5" Grid.RowSpan="2">
+                <StackPanel Orientation="Vertical">
+                    <!-- 设置区域 - 系统配置区 -->
+                    <Border Background="{StaticResource DarkBlueLightBackgroundBrush}"
+                               CornerRadius="4" BorderBrush="{StaticResource DarkBlueBorderBrush}"
+                               BorderThickness="1">
+                        <GroupBox Header="系统配置区" Style="{StaticResource DarkBlueGroupBoxStyle}" Margin="8">
+                            <Grid Margin="4">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- 相似度阈值 -->
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="相似度阈值:" FontSize="11"
+                                                  Foreground="{StaticResource WhiteForegroundBrush}"
+                                                  VerticalAlignment="Center" Margin="0,0,8,8"/>
+                                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,0,16,8">
+                                    <TextBox Text="{Binding MatchThreshold, StringFormat=F2}" 
+                                             Width="80" FontSize="11" HorizontalAlignment="Left" 
+                                             VerticalAlignment="Center" Margin="0,0,8,0"
+                                             Style="{StaticResource DarkBlueTextBoxStyle}"/>
+                                    <TextBlock Text="(默认0.80)" FontSize="10"
+                                               Foreground="{StaticResource WhiteForegroundBrush}" 
+                                               VerticalAlignment="Center" Opacity="0.7"/>
+                                </StackPanel>
+
+                                <!-- 监控间隔 -->
+                                <TextBlock Grid.Row="0" Grid.Column="2" Text="监控间隔(秒):" FontSize="11"
+                                                  Foreground="{StaticResource WhiteForegroundBrush}"
+                                                  VerticalAlignment="Center" Margin="0,0,8,8"/>
+                                <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding MonitorInterval}"
+                                                Width="120" FontSize="11" HorizontalAlignment="Left" Margin="0,0,0,8"
+                                                Style="{StaticResource DarkBlueTextBoxStyle}"/>
+
+                                <!-- 点击类型 -->
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="点击类型:" FontSize="11"
+                                                  Foreground="{StaticResource WhiteForegroundBrush}"
+                                                  VerticalAlignment="Center" Margin="0,0,8,0"/>
+                                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="0,0,16,0">
+                                    <RadioButton Content="左键单击" IsChecked="{Binding IsLeftClick}"
+                                                        GroupName="ClickType" FontSize="11" Margin="0,0,12,0"
+                                                        Style="{StaticResource DarkBlueRadioButtonStyle}"/>
+                                    <RadioButton Content="左键双击" IsChecked="{Binding IsLeftDoubleClick}"
+                                                        GroupName="ClickType" FontSize="11" Margin="0,0,12,0"
+                                                        Style="{StaticResource DarkBlueRadioButtonStyle}"/>
+                                    <RadioButton Content="右键单击" IsChecked="{Binding IsRightClick}"
+                                                        GroupName="ClickType" FontSize="11"
+                                                        Style="{StaticResource DarkBlueRadioButtonStyle}"/>
+                                </StackPanel>
+
+                                <!-- 点击延迟 -->
+                                <TextBlock Grid.Row="1" Grid.Column="2" Text="点击延迟(ms):" FontSize="11"
+                                                  Foreground="{StaticResource WhiteForegroundBrush}"
+                                                  VerticalAlignment="Center" Margin="0,0,8,0"/>
+                                <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding ClickDelay}"
+                                                Width="120" FontSize="11" HorizontalAlignment="Left"
+                                                Style="{StaticResource DarkBlueTextBoxStyle}"/>
+
+                                <!-- 监控区域选择 -->
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="监控区域:" FontSize="11"
+                                                  Foreground="{StaticResource WhiteForegroundBrush}"
+                                                  VerticalAlignment="Center" Margin="0,0,8,8"/>
+                                <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="0,0,0,8">
+                                    <RadioButton Content="全屏" IsChecked="{Binding IsFullScreenMonitoring}"
+                                                        GroupName="MonitoringArea" FontSize="11" Margin="0,0,12,0"
+                                                        Style="{StaticResource DarkBlueRadioButtonStyle}"/>
+                                    <RadioButton Content="自定义" IsChecked="{Binding IsCustomAreaMonitoring}"
+                                                        GroupName="MonitoringArea" FontSize="11" Margin="0,0,12,0"
+                                                        Style="{StaticResource DarkBlueRadioButtonStyle}"/>
+                                    <Button Content="选择区域" Style="{StaticResource CompactButtonStyle}"
+                                                    Command="{Binding AreaSelectionCommand}" FontSize="11"
+                                                    IsEnabled="{Binding IsCustomAreaMonitoring}" Margin="0,0,12,0"/>
+                                </StackPanel>
+
+                                <!-- 运行控制 -->
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="运行控制:" FontSize="11"
+                                                  Foreground="{StaticResource WhiteForegroundBrush}"
+                                                  VerticalAlignment="Center" Margin="0,0,8,0"/>
+                                <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+                                    <Button Content="开始匹配" Style="{StaticResource CompactButtonStyle}"
+                                                    Command="{Binding StartMatchingCommand}" Margin="0,0,12,0"/>
+                                    <Button Content="停止" Style="{StaticResource CompactButtonStyle}"
+                                                    Command="{Binding StopMatchingCommand}"/>
+                                </StackPanel>
+                            </Grid>
+                        </GroupBox>
+                    </Border>
+                    <!-- 设置区域 - 系统配置区 -->
+                    <!-- 设置区域 - 系统配置区 -->
+                </StackPanel>
+            </Border>
+
+            <!-- 下部区域 - 日志显示 -->
+            <Border Grid.Row="2" Background="{StaticResource DarkBlueBackgroundBrush}"
+                    CornerRadius="6" Padding="12">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- 日志标题栏 -->
+
+                    <!-- 日志内容区域 -->
+                    <Border Grid.Row="1" Background="{StaticResource DarkBlueLightBackgroundBrush}"
+                            CornerRadius="4" BorderBrush="{StaticResource DarkBlueBorderBrush}" BorderThickness="1">
+                        <controls:LogViewer x:Name="LogViewerControl" Margin="4" DataContext="{Binding LogViewerViewModel}"/>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- 状态栏 -->
+        <StatusBar Grid.Row="2" Background="{StaticResource DarkBlueBackgroundBrush}"
+                   BorderBrush="{StaticResource DarkBlueBorderBrush}"
+                   BorderThickness="0,1,0,0"
+                   Style="{StaticResource DarkBlueStatusBarStyle}">
+            <StatusBarItem>
+                <TextBlock Text="{Binding StatusBarText}" FontSize="11"
+                           Foreground="{StaticResource WhiteForegroundBrush}"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Separator Style="{StaticResource DarkBlueSeparatorStyle}" Margin="3,0"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Text="{Binding DpiInfo}" FontSize="11"
+                          ToolTip="当前系统DPI设置"
+                          Foreground="{StaticResource WhiteForegroundBrush}"/>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock Text="{Binding CurrentTime, StringFormat=yyyy-MM-dd HH:mm:ss}" FontSize="11"
+                           Foreground="{StaticResource WhiteForegroundBrush}"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
