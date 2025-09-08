@@ -11,6 +11,13 @@ An intelligent mouse automation tool based on image recognition, optimized for W
 
 </div>
 
+## Recent Updates
+
+- Custom area not working (under repair)
+- Optimization: Improved image matching algorithm, enhanced matching accuracy (implemented)
+- Fix: Resolved display issues on high-resolution monitors (implemented)
+- Support for multiple reference images, monitoring multiple reference targets in the monitoring area (planned)
+
 ## ✨ Features
 
 ### 🎯 Core Functions
@@ -76,16 +83,19 @@ An intelligent mouse automation tool based on image recognition, optimized for W
 ### Basic Operation Flow
 
 1. **Image Management**
+
    - Click the "Select Image" button or drag images to the upload area
    - View and adjust target images in the preview area
    - Support multi-image management with add, delete, and sort functions
 
 2. **Area Settings**
+
    - Select monitoring mode: full screen, current window, custom area
    - Use the "Select Area" tool to precisely frame the monitoring range
    - Real-time preview of selected area
 
 3. **Parameter Configuration**
+
    - **Match Precision**: Adjust similarity threshold (0.1-1.0)
    - **Click Delay**: Set click interval time
    - **Click Type**: Left click, right click, double click
@@ -95,7 +105,7 @@ An intelligent mouse automation tool based on image recognition, optimized for W
    - **Start Matching**: Begin automatic monitoring and clicking
    - **Pause/Resume**: Temporarily pause or resume operation
    - **Stop**: Completely stop monitoring
-   - **Hotkeys**: Space (pause/resume), Esc (stop)
+   - **Hotkeys**: Esc (stop)
 
 ### Advanced Features
 
